@@ -1,24 +1,24 @@
-
-var a = 0;
-var b = 0;
-
+var number = 0;
 window.onload = (event) => {
-    var num1 = document.getElementById("number1");
-    var num2 = document.getElementById("number2");
-    a = Math.floor(Math.random()*10);
-    b = Math.floor(Math.random()*10);
-    num1.innerText = a;
-    num2.innerText = b;
+    number = Math.floor(Math.random()*100);
+    console.log(number);
 };
 
-function checkAnswer() {
-    var answer = document.getElementById("answer").value;
-    if (a+b === parseInt(answer)) {
-        alert("Answer is correct");
-        location.reload(); 
+function check() {
+    console.log("Button click");
+    var inputNumber = document.getElementById("input-num").value;
+    console.log(inputNumber);
+    if (inputNumber === number) {
+        alert("Your guess is correct!!");
+        location.reload;
+    }
+    else if (inputNumber > number) {
+        alert("Sorry!! Try a smaller number");
+    }
+    else if (inputNumber < number) {
+        alert("Sorry!! Try a larger number");
     }
     else {
-        alert("Your answer is incorrect. Please check and try again");
+        alert("Please enter a number");
     }
-
 }
